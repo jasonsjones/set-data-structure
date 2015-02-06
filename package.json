@@ -1,0 +1,30 @@
+{
+  "name": "set-data-structure",
+  "version": "0.1.0",
+  "description": "JavaScript implementation of a set data structure",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jasonsjones/set-data-structure.git"
+  },
+  "keywords": [
+    "set",
+    "data structure"
+  ],
+  "author": "Jason Jones",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jasonsjones/set-data-structure/issues"
+  },
+  "homepage": "https://github.com/jasonsjones/set-data-structure",
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-jscs": "^1.4.0",
+    "gulp-jshint": "^1.9.2",
+    "gulp-load-plugins": "^0.8.0",
+    "jshint-stylish": "^1.0.0"
+  }
+}
