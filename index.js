@@ -29,7 +29,11 @@
 
         remove: function (value) {
             var idx = this._items.indexOf(value);
-            return this._items.splice(idx, 1);
+            if (idx === -1) {
+                return null;
+            } else {
+                return this._items.splice(idx, 1)[0];
+            }
         },
 
         has: function (value) {
