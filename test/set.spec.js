@@ -93,12 +93,12 @@ describe('Set Unit Tests', function() {
     it('should return an array of all items in the set', function () {
         set.add('test item 1');
         set.add('test item 2');
-        set.add('test item 3');
+        set.add({item: 'test item 3'});
 
         var values = set.values();
         values.should.be.Array;
         values.should.have.length(3);
         values.should.containEql('test item 1');
-        values.should.containEql('test item 3');
+        values.should.containEql({item: 'test item 3'});
     });
 });
