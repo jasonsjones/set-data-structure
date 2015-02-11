@@ -22,9 +22,34 @@ describe('Set Unit Tests', function() {
         set.should.be.ok;
     });
 
-    it('should be empty when first instantiated', function () {
+    it('should be empty when first instantiated with no args', function () {
         set.isEmpty().should.equal(true);
         set.size().should.equal(0);
+    });
+
+    it('should insantiate a set of the correct size if passed an array', function () {
+        var sut = new MySet([1, 2, 'test', 5, 'another item']);
+        sut.size().should.equal(5);
+        sut = null;
+    });
+
+    it('should insantiate a set of the correct size if passed individual args', function () {
+        var sut = new MySet(1, 2, 'test', 5, 'another item');
+        sut.size().should.equal(5);
+        sut = null;
+    });
+
+    it('should insantiate a set of unique items if passed an array with duplicate items',
+        function () {
+            var sut = new MySet([1, 2, 'test', 5, 'test', 1]);
+            sut.size().should.equal(4);
+            sut = null;
+        });
+
+    it('should insantiate a set of unique items if passed duplicate args', function () {
+        var sut = new MySet(1, 2, 'test', 5, 'test', 1);
+        sut.size().should.equal(4);
+        sut = null;
     });
 
     it('should add items to the set', function () {

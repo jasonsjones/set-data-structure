@@ -12,9 +12,21 @@
      * structure
      *
      * @constructor
+     * @param {object|string|number} args variable number of arguments to
+     *        initialize the set, can be an array or individual arguments
      */
-    function Set() {
+    function Set(args) {
         this._items = [];
+
+        if (args instanceof Array) {
+            for (var j = 0; j < args.length; j++) {
+                this.add(args[j]);
+            }
+        } else if (arguments) {
+            for (var i = 0; i < arguments.length; i++) {
+                this.add(arguments[i]);
+            }
+        }
     }
 
     /* Functions attached to the Set prototype.  All set instances will share
