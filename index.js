@@ -113,6 +113,26 @@
          */
         values: function () {
             return this._items;
+        },
+
+        /**
+         * Returns a Set that is the union of this and the 'otherSet'
+         *
+         * @param {object} otherSet the set to union with this
+         * @returns {object} a set which is a union of this and the 'otherSet'
+         */
+        union: function (otherSet) {
+            if (!(otherSet instanceof Set)) {
+                return new TypeError('invalid parameter type; a Set is required');
+            }
+
+            var result = new Set(this.values());
+            var arg = otherSet.values();
+
+            for (var i = 0; i < arg.length; i++) {
+                result.add(arg[i]);
+            }
+            return result;
         }
     };
 

@@ -126,4 +126,13 @@ describe('Set Unit Tests', function() {
         values.should.containEql('test item 1');
         values.should.containEql({item: 'test item 3'});
     });
+
+    it('should return a Set that is the union of two other sets', function () {
+        var setA = new MySet([1,2,3,4]);
+        var setB = new MySet([4,5,6,7]);
+        var setC = setA.union(setB);
+        setC.size().should.equal(7);
+        setC.values().should.be.an.Array;
+        setC.values().should.containEql(1,2,3,4,5,6,7);
+    });
 });
