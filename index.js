@@ -123,7 +123,7 @@
          */
         union: function (otherSet) {
             if (!(otherSet instanceof Set)) {
-                return new TypeError('invalid parameter type; a Set is required');
+                throw new TypeError('invalid parameter type; a Set is required');
             }
 
             var result = new Set(this.values());

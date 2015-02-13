@@ -135,4 +135,11 @@ describe('Set Unit Tests', function() {
         setC.values().should.be.an.Array;
         setC.values().should.containEql(1,2,3,4,5,6,7);
     });
+
+    it('should throw an error if union is called with a non-set parameter', function () {
+        var setA = new MySet([1,2,3,4]);
+        (function () {
+            setA.union('this should throw error');
+        }).should.throw(/invalid parameter/);
+    });
 });
