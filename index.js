@@ -18,13 +18,15 @@
     function Set(args) {
         this._items = [];
 
-        if (args instanceof Array) {
-            for (var j = 0; j < args.length; j++) {
-                this.add(args[j]);
-            }
-        } else if (arguments) {
+        if (args) {
             for (var i = 0; i < arguments.length; i++) {
-                this.add(arguments[i]);
+                if (args instanceof Array) {
+                    for (var j = 0; j < args.length; j++) {
+                        this.add(args[j]);
+                    }
+                } else {
+                    this.add(arguments[i]);
+                }
             }
         }
     }
