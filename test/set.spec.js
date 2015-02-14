@@ -142,4 +142,20 @@ describe('Set Unit Tests', function() {
             setA.union('this should throw error');
         }).should.throw(/invalid parameter/);
     });
+
+    it('should return the intersection of two sets', function () {
+        var setA = new MySet([1, 2, 3, 4]);
+        var setB = new MySet([4, 2, 6, 3]);
+        var setC = setA.intersection(setB);
+        setC.size().should.equal(3);
+        setC.values().should.be.an.Array;
+        setC.values().should.containEql(2, 3, 4);
+    });
+
+    it('should throw an error if intersection is called with a non-set parameter', function () {
+        var setA = new MySet([1, 2, 3, 4]);
+        (function () {
+            setA.intersection('this should throw error');
+        }).should.throw(/invalid parameter/);
+    });
 });

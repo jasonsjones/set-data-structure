@@ -135,6 +135,21 @@
                 result.add(arg[i]);
             }
             return result;
+        },
+
+        intersection: function (otherSet) {
+            if (!(otherSet instanceof Set)) {
+                throw new TypeError('invalid parameter type; a Set is required');
+            }
+
+            var intersection = new Set();
+            var thisValues = this.values();
+            for (var i = 0; i < thisValues.length; i++) {
+                if (otherSet.has(thisValues[i])) {
+                    intersection.add(thisValues[i]);
+                }
+            }
+            return intersection;
         }
     };
 
