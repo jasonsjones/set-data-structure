@@ -158,4 +158,20 @@ describe('Set Unit Tests', function() {
             setA.intersection('this should throw error');
         }).should.throw(/invalid parameter/);
     });
+
+    it('should return the difference of two sets', function () {
+        var setA = new MySet([1, 2, 3, 4, 5]);
+        var setB = new MySet([3, 4, 5, 6, 7, 8, 9]);
+        var setC = setA.difference(setB);
+        setC.size().should.equal(6);
+        setC.values().should.be.an.Array;
+        setC.values().should.containEql(1, 2, 6, 7, 8, 9);
+    });
+
+    it('should throw an error if difference is called with a non-set parameter', function () {
+        var setA = new MySet([1, 2, 3, 4]);
+        (function () {
+            setA.intersection('this should throw error');
+        }).should.throw(/invalid parameter/);
+    });
 });

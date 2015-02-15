@@ -137,19 +137,54 @@
             return result;
         },
 
+        /**
+         * Returns a Set that ts the intersection of this and the 'otherSet'
+         *
+         * @param {object} otherSet the set to intersect with this
+         * @returns {object} a set which is an intersection of this and the 'otherSet'
+         */
         intersection: function (otherSet) {
             if (!(otherSet instanceof Set)) {
                 throw new TypeError('invalid parameter type; a Set is required');
             }
 
             var intersection = new Set();
-            var thisValues = this.values();
-            for (var i = 0; i < thisValues.length; i++) {
-                if (otherSet.has(thisValues[i])) {
-                    intersection.add(thisValues[i]);
+            var theseValues = this.values();
+            for (var i = 0; i < theseValues.length; i++) {
+                if (otherSet.has(theseValues[i])) {
+                    intersection.add(theseValues[i]);
                 }
             }
             return intersection;
+        },
+
+        /**
+         * Returns a Set that ts the different of this and the 'otherSet'
+         *
+         * @param {object} otherSet the set to use to determine the difference
+         * @returns {object} a set which is an difference of this and the 'otherSet'
+         */
+        difference: function (otherSet) {
+            if (!(otherSet instanceof Set)) {
+                throw new TypeError('invalid parameter type; a Set is required');
+            }
+
+            var difference = new Set();
+            var theseValues = this.values();
+            var otherValues = otherSet.values();
+
+            for (var i = 0; i < theseValues.length; i++) {
+                if (!otherSet.has(theseValues[i])) {
+                    difference.add(theseValues[i]);
+                }
+            }
+            for (var j = 0; j < otherValues.length; j++) {
+                if (!this.has(otherValues[j])) {
+                    difference.add(otherValues[j]);
+                }
+            }
+
+            return difference;
         }
     };
 
