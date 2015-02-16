@@ -161,11 +161,11 @@ describe('Set Unit Tests', function() {
 
     it('should return the difference of two sets', function () {
         var setA = new MySet([1, 2, 3, 4, 5]);
-        var setB = new MySet([3, 4, 5, 6, 7, 8, 9]);
+        var setB = new MySet([3, 4, 5, 6, 7]);
         var setC = setA.difference(setB);
-        setC.size().should.equal(6);
+        setC.size().should.equal(2);
         setC.values().should.be.an.Array;
-        setC.values().should.containEql(1, 2, 6, 7, 8, 9);
+        setC.values().should.containEql(1, 2);
     });
 
     it('should throw an error if difference is called with a non-set parameter', function () {

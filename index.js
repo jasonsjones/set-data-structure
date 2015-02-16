@@ -118,7 +118,7 @@
         },
 
         /**
-         * Returns a Set that is the union of this and the 'otherSet'
+         * Returns a Set that is the union of this set and the 'otherSet'
          *
          * @param {object} otherSet the set to union with this
          * @returns {object} a set which is a union of this and the 'otherSet'
@@ -128,17 +128,17 @@
                 throw new TypeError('invalid parameter type; a Set is required');
             }
 
-            var result = new Set(this.values());
-            var arg = otherSet.values();
+            var unionSet = new Set(this.values());
+            var argValues = otherSet.values();
 
-            for (var i = 0; i < arg.length; i++) {
-                result.add(arg[i]);
+            for (var i = 0; i < argValues.length; i++) {
+                unionSet.add(argValues[i]);
             }
-            return result;
+            return unionSet;
         },
 
         /**
-         * Returns a Set that ts the intersection of this and the 'otherSet'
+         * Returns a Set that ts the intersection of this set and the 'otherSet'
          *
          * @param {object} otherSet the set to intersect with this
          * @returns {object} a set which is an intersection of this and the 'otherSet'
@@ -148,14 +148,15 @@
                 throw new TypeError('invalid parameter type; a Set is required');
             }
 
-            var intersection = new Set();
+            var intersectionSet = new Set();
             var theseValues = this.values();
+
             for (var i = 0; i < theseValues.length; i++) {
                 if (otherSet.has(theseValues[i])) {
-                    intersection.add(theseValues[i]);
+                    intersectionSet.add(theseValues[i]);
                 }
             }
-            return intersection;
+            return intersectionSet;
         },
 
         /**
@@ -169,22 +170,16 @@
                 throw new TypeError('invalid parameter type; a Set is required');
             }
 
-            var difference = new Set();
+            var differenceSet = new Set();
             var theseValues = this.values();
-            var otherValues = otherSet.values();
 
             for (var i = 0; i < theseValues.length; i++) {
                 if (!otherSet.has(theseValues[i])) {
-                    difference.add(theseValues[i]);
-                }
-            }
-            for (var j = 0; j < otherValues.length; j++) {
-                if (!this.has(otherValues[j])) {
-                    difference.add(otherValues[j]);
+                    differenceSet.add(theseValues[i]);
                 }
             }
 
-            return difference;
+            return differenceSet;
         }
     };
 
