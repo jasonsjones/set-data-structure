@@ -15,12 +15,14 @@ gulp.task('jshint', function() {
         .pipe($.jscs());
 });
 
-gulp.task('test', function () {
+gulp.task('test', ['jshint'], function () {
     log('Running unit tests with mocha...');
     return gulp
         .src(source[1])
         .pipe($.mocha());
 });
+
+gulp.task('default', ['test']);
 
 /***************************/
 function log(msg) {
