@@ -20,9 +20,9 @@
 
         if (args) {
             for (var i = 0; i < arguments.length; i++) {
-                if (args instanceof Array) {
-                    for (var j = 0; j < args.length; j++) {
-                        this.add(args[j]);
+                if (arguments[i] instanceof Array) {
+                    for (var j = 0; j < arguments[i].length; j++) {
+                        this.add(arguments[i][j]);
                     }
                 } else {
                     this.add(arguments[i]);
@@ -118,17 +118,24 @@
         },
 
         /**
-         * Returns a Set that is the union of this set and the 'otherSet'
+         * Returns a Set that is the union of this set and the 'otherSet'.  The
+         * returned set will contain all the elements from both sets, and by
+         * definition, will not contain any duplicates.
          *
          * @param {object} otherSet the set to union with this
          * @returns {object} a set which is a union of this and the 'otherSet'
          */
         union: function (otherSet) {
+            // if the 'otherSet' is not a Set, throw TypeError
             if (!(otherSet instanceof Set)) {
                 throw new TypeError('invalid parameter type; a Set is required');
             }
 
+            // create the set to return and initialize with the values from
+            // this set
             var unionSet = new Set(this.values());
+
+            // get array of values from the fn parameter
             var argValues = otherSet.values();
 
             for (var i = 0; i < argValues.length; i++) {
@@ -138,12 +145,15 @@
         },
 
         /**
-         * Returns a Set that ts the intersection of this set and the 'otherSet'
+         * Returns a Set that ts the intersection of this set and the 'otherSet',
+         * The returned set will have only those items that both sets have in
+         * common.
          *
          * @param {object} otherSet the set to intersect with this
          * @returns {object} a set which is an intersection of this and the 'otherSet'
          */
         intersection: function (otherSet) {
+            // if the 'otherSet' is not a Set, throw TypeError
             if (!(otherSet instanceof Set)) {
                 throw new TypeError('invalid parameter type; a Set is required');
             }
@@ -160,12 +170,15 @@
         },
 
         /**
-         * Returns a Set that ts the different of this and the 'otherSet'
+         * Returns a Set that ts the different of this and the 'otherSet',  The
+         * returned set will have those items that are contained in this set, but
+         * NOT contained in the 'otherSet'.
          *
          * @param {object} otherSet the set to use to determine the difference
          * @returns {object} a set which is an difference of this and the 'otherSet'
          */
         difference: function (otherSet) {
+            // if the 'otherSet' is not a Set, throw TypeError
             if (!(otherSet instanceof Set)) {
                 throw new TypeError('invalid parameter type; a Set is required');
             }
