@@ -193,6 +193,36 @@
             }
 
             return differenceSet;
+        },
+
+        /**
+         * Returns whether or not this set is a subset of the 'otherSet'.  If all
+         * items of this set are contained in the otherSet, this function returns
+         * true; false otherwise.
+         *
+         * @param {object} otherSet the set to use to determine if this set is a subset
+         * @returns {boolean} true if this set is a subset of the 'otherSet', false
+         *          otherwise
+         */
+        subset: function (otherSet) {
+            // if the 'otherSet' is not a Set, throw TypeError
+            if (!(otherSet instanceof Set)) {
+                throw new TypeError('invalid parameter type; a Set is required');
+            }
+
+            // if the size of this set is greater than the size of the otherSet,
+            // we know this cannot be a subset of the otherSet
+            if (this.size() > otherSet.size()) {
+                return false;
+            } else {
+                var values = this.values();
+                for (var i = 0; i < values.length; i++) {
+                    if (!otherSet.has(values[i])) {
+                        return false;
+                    }
+                }
+                return true;
+            }
         }
     };
 

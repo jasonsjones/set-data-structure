@@ -174,4 +174,25 @@ describe('Set Unit Tests', function() {
             setA.intersection('this should throw error');
         }).should.throw(/invalid parameter/);
     });
+
+    it('should return whether or not this set is a subset of another set', function () {
+        var setA = new MySet([1, 2, 3, 4, 5]);
+        var setB = new MySet([1, 2, 3, 4, 5, 6, 7, 8, 9]);
+        setA.subset(setB).should.equal(true);
+
+        var setC = new MySet([1, 2, 3, 4, 5, 6, 7]);
+        var setD = new MySet([1, 2, 3, 4, 5]);
+        setC.subset(setD).should.equal(false);
+
+        var setE = new MySet([1, 2, 10, 4, 5]);
+        var setF = new MySet([1, 2, 3, 4, 5, 6, 7]);
+        setE.subset(setF).should.equal(false);
+    });
+
+    it('should throw an error if subset is called with a non-set parameter', function () {
+        var setA = new MySet([1, 2, 3, 4]);
+        (function () {
+            setA.subset('this should throw error');
+        }).should.throw(/invalid parameter/);
+    });
 });
