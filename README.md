@@ -1,3 +1,5 @@
+# [![npm version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![dependency status][dm-image]][dm-url]
+
 # Set Data Structure
 
 ## Description
@@ -89,15 +91,54 @@ setA.isEmpty();
 **Available methods for a Set instance:**
 
 * ### isEmpty()
+    Determines if the set is empty
+
+* ### size()
+    Returns the size, or number of items in the set
+
 * ### clear()
+    Clears all the items from the set
+
 * ### add(value)
+    Adds an item to the set.  If the set already contains the item,
+    it is not added.
+
 * ### remove(value)
+    Removes an item from the set.
+
 * ### has(value)
+    Determines of the set contains, or has, the value
+
+* ### values()
+    Returns an array containing all the items in the set
+
 * ### union(otherSet)
+    Returns a Set that is the union of this set and the 'otherSet'.  The
+    returned set will contain all the elements from both sets, and by
+    definition, will not contain any duplicates.
+
 * ### intersection(otherSet)
+    Returns a Set that ts the intersection of this set and the 'otherSet',
+    The returned set will have only those items that both sets have in
+    common.
+
 * ### difference(otherSet)
+    Returns a Set that ts the different of this and the 'otherSet',  The
+    returned set will have those items that are contained in this set, but
+    NOT contained in the 'otherSet'.
+
 * ### subset(otherSet)
+    Returns whether or not this set is a subset of the 'otherSet'.  If all
+    items of this set are contained in the otherSet, this function returns
+    true; false otherwise.
 
 ----
 ## License
 MIT &copy; Jason Jones
+
+[npm-image]:https://badge.fury.io/js/set-data-structure.svg
+[npm-url]:http://npmjs.org/package/set-data-structure
+[travis-image]:https://travis-ci.org/jasonsjones/set-data-structure.svg
+[travis-url]:https://travis-ci.org/jasonsjones/set-data-structure
+[dm-image]:https://david-dm.org/jasonsjones/set-data-structure.svg
+[dm-url]:https://david-dm.org/jasonsjones/set-data-structure
