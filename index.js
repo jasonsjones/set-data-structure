@@ -124,6 +124,8 @@
          *
          * @param {object} otherSet the set to union with this
          * @returns {object} a set which is a union of this and the 'otherSet'
+         *
+         * @throws {TypeError} if 'otherSet' is not a Set
          */
         union: function (otherSet) {
             // if the 'otherSet' is not a Set, throw TypeError
@@ -151,6 +153,8 @@
          *
          * @param {object} otherSet the set to intersect with this
          * @returns {object} a set which is an intersection of this and the 'otherSet'
+         *
+         * @throws {TypeError} if 'otherSet' is not a Set
          */
         intersection: function (otherSet) {
             // if the 'otherSet' is not a Set, throw TypeError
@@ -176,6 +180,8 @@
          *
          * @param {object} otherSet the set to use to determine the difference
          * @returns {object} a set which is an difference of this and the 'otherSet'
+         *
+         * @throws {TypeError} if 'otherSet' is not a Set
          */
         difference: function (otherSet) {
             // if the 'otherSet' is not a Set, throw TypeError
@@ -203,6 +209,8 @@
          * @param {object} otherSet the set to use to determine if this set is a subset
          * @returns {boolean} true if this set is a subset of the 'otherSet', false
          *          otherwise
+         *
+         * @throws {TypeError} if 'otherSet' is not a Set
          */
         subset: function (otherSet) {
             // if the 'otherSet' is not a Set, throw TypeError
