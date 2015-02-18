@@ -42,7 +42,7 @@ with this data structure. For a description of all the methods, see the
 API section._
 
 ```javascript
-var SetDS = require('set-data-structure);
+var SetDS = require('set-data-structure');
 var setA = new SetDS();
 
 setA.isEmpty();
