@@ -136,8 +136,8 @@ setA.isEmpty();
 ## License
 MIT &copy; Jason Jones
 
-[npm-image]:https://badge.fury.io/js/set-data-structure.svg
-[npm-url]:http://npmjs.org/package/set-data-structure
+[npm-image]:https://badge.fury.io/js/set-ds.svg
+[npm-url]:http://npmjs.org/package/set-ds
 [travis-image]:https://travis-ci.org/jasonsjones/set-data-structure.svg
 [travis-url]:https://travis-ci.org/jasonsjones/set-data-structure
 [dm-image]:https://david-dm.org/jasonsjones/set-data-structure.svg
