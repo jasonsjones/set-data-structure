@@ -1,5 +1,5 @@
 {
-  "name": "set-data-structure",
+  "name": "set-ds",
   "version": "0.1.0",
   "description": "JavaScript implementation of a set data structure",
   "main": "index.js",

@@ -34,7 +34,7 @@ this implementation in any other context/environment; only tested with node.js_
 Install with npm :
 
 ```bash
-npm install set-data-structure --save
+npm install set-ds --save
 ```
 Basic usage example below.  _Note: it does not cover all the available
 methods, rather just highlights the main functionality to get up and running
@@ -42,7 +42,7 @@ with this data structure. For a description of all the methods, see the
 API section._
 
 ```javascript
-var SetDS = require('set-data-structure');
+var SetDS = require('set-ds');
 var setA = new SetDS();
 
 setA.isEmpty();
