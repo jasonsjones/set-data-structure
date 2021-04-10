@@ -1,3 +1,7 @@
+### NOTICE:
+
+This repository is no longer under active maintenance. The source has been merged into this [monorepo](https://github.com/jasonsjones/data-structures) for easier maintenance and publishing.
+
 # [![npm version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![dependency status][dm-image]][dm-url] [![devDependency status][devdep-image]][devdep-url]
 
 # Set Data Structure
